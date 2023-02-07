@@ -6,7 +6,7 @@
 /*   By: absaid <absaid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 03:23:16 by absaid            #+#    #+#             */
-/*   Updated: 2023/02/06 20:15:32 by absaid           ###   ########.fr       */
+/*   Updated: 2023/02/07 21:55:44 by absaid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,5 +16,9 @@
 # include"Libft-42/libft.h"
 
 t_list *parser(char **args);
+void push(t_list **src , t_list **dst);
+void rotate(t_list **stack);
+void rrotate(t_list **stack);
+void swap(t_list **stack);
 
 #endif

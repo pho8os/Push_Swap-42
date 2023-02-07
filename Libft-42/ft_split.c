@@ -6,7 +6,7 @@
 /*   By: absaid <absaid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 10:55:28 by absaid            #+#    #+#             */
-/*   Updated: 2022/10/22 15:47:27 by absaid           ###   ########.fr       */
+/*   Updated: 2023/02/07 13:24:01 by absaid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ char	**ft_split(char const *s, char c)
 	l = -1;
 	if (!s)
 		return (NULL);
-	p = (char **)malloc(sizeof (char *) * (count_words((char *)s, c) + 1));
+	p = gc(sizeof (char *) * (count_words((char *)s, c) + 1), 1);
 	if (!p)
 		return (NULL);
 	while (++l < count_words((char *)s, c))

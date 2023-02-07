@@ -24,8 +24,7 @@ char	*ft_strjoin(const char *s1, const char *s2)
 		str1 = ft_strdup("");
 	else
 		str1 = ft_strdup(s1);
-	str = malloc(sizeof (char) * ((ft_strlen(str1))
-				+ ft_strlen(s2)) + 2);
+	str = gc(sizeof (char) * ((ft_strlen(str1)) + ft_strlen(s2)) + 2, 1);
 	if (!str)
 		return (NULL);
 	while (str1[++i])
@@ -37,6 +36,5 @@ char	*ft_strjoin(const char *s1, const char *s2)
 	while (s2[++i])
 		str[j++] = s2[i];
 	str[j] = '\0';
-	free(str1);
 	return (str);
 }

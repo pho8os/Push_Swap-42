@@ -6,7 +6,7 @@
 /*   By: absaid <absaid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 07:25:05 by absaid            #+#    #+#             */
-/*   Updated: 2023/02/06 20:18:42 by absaid           ###   ########.fr       */
+/*   Updated: 2023/02/07 13:45:44 by absaid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int	ft_atoi(const char *str)
 		result = result * 10 + str[i] - '0';
 		i++;
 		if (result > INT_MAX || result < INT_MIN)
-			return (write(2, "error\n", 7), gc(0, 0), 0);
+			return (write(2, "Error\n", 7), gc(0, 0), 0);
 	}
 	return ((int)result * n);
 }
