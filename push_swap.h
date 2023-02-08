@@ -6,7 +6,7 @@
 /*   By: absaid <absaid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 03:23:16 by absaid            #+#    #+#             */
-/*   Updated: 2023/02/08 04:31:45 by absaid           ###   ########.fr       */
+/*   Updated: 2023/02/08 04:55:59 by absaid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 t_list *parser(char **args);
 bool ft_sort(t_list *stack);
 void sort_3(t_list **s);
+void sort_5(t_list **sa, t_list **sb);
 void push(t_list **src , t_list **dst);
 void pa(t_list **src , t_list **dst);
 void pb(t_list **src , t_list **dst);
@@ -34,5 +35,6 @@ void swap(t_list **stack);
 void sa(t_list **stack);
 void sb(t_list **stack);
 void ss(t_list **stack_a, t_list **stack_b);
+void getpose(t_list *list,int *min, int *max);
 
 #endif

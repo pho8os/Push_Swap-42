@@ -6,7 +6,7 @@
 /*   By: absaid <absaid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 23:14:27 by absaid            #+#    #+#             */
-/*   Updated: 2023/02/08 04:36:10 by absaid           ###   ########.fr       */
+/*   Updated: 2023/02/08 04:54:03 by absaid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,11 @@ void getpose(t_list *list,int *min, int *max)
 	i = list->num;
 	j = list->num;
 	*min = 0;
-	*max = 0;
+	if(max)
+		*max = 0;
 	while(list)
 	{
-		if(list->num > i)
+		if(list->num > i && max)
 		{
 			*max = l;	
 			i = list->num;
