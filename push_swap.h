@@ -6,7 +6,7 @@
 /*   By: absaid <absaid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 03:23:16 by absaid            #+#    #+#             */
-/*   Updated: 2023/02/07 23:50:15 by absaid           ###   ########.fr       */
+/*   Updated: 2023/02/08 04:31:45 by absaid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,22 @@
 #include <stdbool.h>
 
 t_list *parser(char **args);
-void push(t_list **src , t_list **dst);
-void rotate(t_list **stack);
-void rrotate(t_list **stack);
-void swap(t_list **stack);
 bool ft_sort(t_list *stack);
 void sort_3(t_list **s);
+void push(t_list **src , t_list **dst);
+void pa(t_list **src , t_list **dst);
+void pb(t_list **src , t_list **dst);
+void rrotate(t_list **stack);
+void rra(t_list **stack);
+void rrb(t_list **stack);
+void rrr(t_list **stack_a, t_list **stack_b);
+void rotate(t_list **stack);
+void ra(t_list **stack);
+void rb(t_list **stack);
+void rr(t_list **stack_a, t_list **stack_b);
+void swap(t_list **stack);
+void sa(t_list **stack);
+void sb(t_list **stack);
+void ss(t_list **stack_a, t_list **stack_b);
 
 #endif
