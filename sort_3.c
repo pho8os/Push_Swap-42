@@ -6,60 +6,37 @@
 /*   By: absaid <absaid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 23:14:27 by absaid            #+#    #+#             */
-/*   Updated: 2023/02/08 04:54:03 by absaid           ###   ########.fr       */
+/*   Updated: 2023/02/08 22:47:18 by absaid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-void getpose(t_list *list,int *min, int *max)
+int get_max(t_list *stack)
 {
-	int i;
-	int j;
-	int l;
-	
-	l = 0;
-	i = list->num;
-	j = list->num;
-	*min = 0;
-	if(max)
-		*max = 0;
-	while(list)
+	int max;
+
+	max = stack->num;
+	while(stack)
 	{
-		if(list->num > i && max)
-		{
-			*max = l;	
-			i = list->num;
-		}	
-		if(list->num < j)
-		{
-			*min = l;	
-			j = list->num;
-		}
-		l++;
-		list = list->next;
+		if(stack->num > max)
+			max = stack->num;
+		stack = stack->next;
 	}
+	return(max);
 }
 
 void sort_3(t_list **s)
 {
-	int pmin;
-	int pmax;
+	int max;
 
-	getpose(*s, &pmin, &pmax);
-	if((pmin == 1 && pmax == 2) || ft_lstsize(*s) == 2)
-		sa(s);
-	if(pmin == 2 && pmax ==0)
+	max = get_max(*s);
+	if(ft_lstsize(*s) == 3)
 	{
-		sa(s);
-		rra(s);
+		if((*s)->num == max)
+			ra(s);
+		else if((*s)->next->num == max)
+			rra(s);
 	}
-	if(pmin == 1 && pmax == 0)
-		ra(s);
-	if(pmin == 0 && pmax == 1)
-	{
+	if((*s)->num > (*s)->next->num)
 		sa(s);
-		ra(s);
-	}
-	if(pmin == 2 && pmax == 1)
-		rra(s);
 }

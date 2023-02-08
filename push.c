@@ -6,7 +6,7 @@
 /*   By: absaid <absaid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 20:45:26 by absaid            #+#    #+#             */
-/*   Updated: 2023/02/08 04:31:26 by absaid           ###   ########.fr       */
+/*   Updated: 2023/02/08 22:03:54 by absaid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ void push(t_list **src , t_list **dst)
 	t_list *tmp;
 	tmp = *src;
 	*src = (*src)->next;
+	tmp->next = NULL;
 	ft_lstadd_front(dst, tmp);
 }
 
