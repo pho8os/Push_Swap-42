@@ -6,32 +6,11 @@
 /*   By: absaid <absaid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 03:26:06 by absaid            #+#    #+#             */
-/*   Updated: 2023/02/07 14:00:28 by absaid           ###   ########.fr       */
+/*   Updated: 2023/02/08 00:44:09 by absaid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"push_swap.h"
-
-// int checkdup(t_list *list)
-// {
-//     int					num;
-// 	t_list				*tmp;
-//     unsigned long long	flag;
-// 	int					index;
-	
-// 	flag = 0;
-// 	tmp = list;
-//     while(tmp) 
-// 	{
-//         num = tmp->num;
-//         index = num - INT_MIN;
-//         if ((flag & (1ull << index))) 
-//             return 0;
-//         flag |= 1ull << index;
-// 		tmp = tmp->next;
-//     }
-//     return 1;
-// }
 
 int chartoint(char *str)
 {
@@ -94,7 +73,5 @@ t_list *parser(char **args)
 	while(args[++i])	
 		str = ft_strjoin(str,args[i]);
 	list = chartolist(ft_split(str,' '));
-	// if(!checkdup(list))
-	// 	return (write(2, "Error\n", 6), gc(0, 0), NULL); TODO : check dups while indexing the nums
 	return(list);
 }

@@ -1,27 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_sort.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: absaid <absaid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/04 03:23:16 by absaid            #+#    #+#             */
-/*   Updated: 2023/02/07 23:50:15 by absaid           ###   ########.fr       */
+/*   Created: 2023/02/07 22:51:41 by absaid            #+#    #+#             */
+/*   Updated: 2023/02/07 23:00:03 by absaid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-#define PUSH_SWAP_H
-
-# include"Libft-42/libft.h"
-#include <stdbool.h>
-
-t_list *parser(char **args);
-void push(t_list **src , t_list **dst);
-void rotate(t_list **stack);
-void rrotate(t_list **stack);
-void swap(t_list **stack);
-bool ft_sort(t_list *stack);
-void sort_3(t_list **s);
-
-#endif
+#include "push_swap.h"
+bool ft_sort(t_list *stack)
+{
+	
+	while(stack->next)
+	{
+		if(stack->num < stack->next->num)
+			stack = stack->next;
+		else
+			return (false);
+	}
+	return (true);
+}

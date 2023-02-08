@@ -6,7 +6,7 @@
 /*   By: absaid <absaid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 18:01:33 by absaid            #+#    #+#             */
-/*   Updated: 2023/02/07 13:32:32 by absaid           ###   ########.fr       */
+/*   Updated: 2023/02/07 23:00:35 by absaid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,5 +32,5 @@ void	*gc(size_t size, int param)
 		return (address);
 	}
 	ft_lstclear(&head, free);
-	return (exit(1), NULL);
+	return (exit(0), NULL);
 }

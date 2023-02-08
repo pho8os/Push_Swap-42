@@ -1,27 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   sort_3.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: absaid <absaid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/04 03:23:16 by absaid            #+#    #+#             */
-/*   Updated: 2023/02/07 23:50:15 by absaid           ###   ########.fr       */
+/*   Created: 2023/02/07 23:14:27 by absaid            #+#    #+#             */
+/*   Updated: 2023/02/08 00:16:14 by absaid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-#define PUSH_SWAP_H
+#include "push_swap.h"
 
-# include"Libft-42/libft.h"
-#include <stdbool.h>
-
-t_list *parser(char **args);
-void push(t_list **src , t_list **dst);
-void rotate(t_list **stack);
-void rrotate(t_list **stack);
-void swap(t_list **stack);
-bool ft_sort(t_list *stack);
-void sort_3(t_list **s);
-
-#endif
+void sort_3(t_list **s)
+{
+	if((*s)->num > (*s)->next->num && (*s)->next->num < (*s)->next->next->num)
+	{
+		swap(s);
+		write(1, "sa\n", 3);
+	}
+	if((*s)->num > (*s)->next->num && (*s)->next->num > (*s)->next->next->num)
+	{
+		swap(s);
+		rrotate(s);
+		write(1, "sa\nrra\n", 7);
+	}
+}
