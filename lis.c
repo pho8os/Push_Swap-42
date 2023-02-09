@@ -1,16 +1,28 @@
-int get_max(t_list *stack)
-{
-	int max;
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   lis.c                                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: absaid <absaid@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/02/09 18:00:23 by absaid            #+#    #+#             */
+/*   Updated: 2023/02/09 18:00:24 by absaid           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-	max = stack->num;
-	while(stack)
-	{
-		if(stack->num > max)
-		{
+// int get_max(t_list *stack)
+// {
+// 	int max;
+
+// 	max = stack->num;
+// 	while(stack)
+// 	{
+// 		if(stack->num > max)
+// 		{
 			
-			max = stack->num;
-		}
-		stack = stack->next;
-	}
-	return(max);
-}
+// 			max = stack->num;
+// 		}
+// 		stack = stack->next;
+// 	}
+// 	return(max);
+// }
