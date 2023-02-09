@@ -6,7 +6,7 @@
 /*   By: absaid <absaid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 20:45:26 by absaid            #+#    #+#             */
-/*   Updated: 2023/02/08 22:03:54 by absaid           ###   ########.fr       */
+/*   Updated: 2023/02/09 02:54:43 by absaid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,10 @@
 
 void push(t_list **src , t_list **dst)
 {
-	if(!*src || !src)
-		return ;
 	t_list *tmp;
+	
+	if(!*src || !src)
+		gc(0, 0);
 	tmp = *src;
 	*src = (*src)->next;
 	tmp->next = NULL;

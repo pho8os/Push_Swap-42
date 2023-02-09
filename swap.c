@@ -6,7 +6,7 @@
 /*   By: absaid <absaid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 21:43:34 by absaid            #+#    #+#             */
-/*   Updated: 2023/02/08 04:26:44 by absaid           ###   ########.fr       */
+/*   Updated: 2023/02/09 02:27:52 by absaid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ void swap(t_list **stack)
 	tmp = (*stack)->num;
 	(*stack)->num = (*stack)->next->num;
 	(*stack)->next->num = tmp;
-	//TODO : if i will use indexs i must swap em to.
 }
 
 void sa(t_list **stack)

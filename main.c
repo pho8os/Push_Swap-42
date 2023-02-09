@@ -6,7 +6,7 @@
 /*   By: absaid <absaid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 03:22:58 by absaid            #+#    #+#             */
-/*   Updated: 2023/02/08 22:44:18 by absaid           ###   ########.fr       */
+/*   Updated: 2023/02/09 02:22:13 by absaid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,15 +20,15 @@ void check()
 void printstack(t_list *stack, char *name)
 {
 	
-	printf("---------\n");
-	printf("|  %s  |\n", name);
-	printf("---------\n");
+	printf("------------\n");
+	printf("|%-10s|\n", name);
+	printf("------------\n");
 	while(stack != NULL)
 	{
-		printf("|     %d  |\n",stack->num);
+		printf("|%-10d|\n",stack->num);
 		stack = stack->next;
 	}
-	printf("---------\n");
+	printf("------------\n");
 }
 int main(int ac, char **av)
 {

@@ -6,7 +6,7 @@
 /*   By: absaid <absaid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 03:26:06 by absaid            #+#    #+#             */
-/*   Updated: 2023/02/08 00:44:09 by absaid           ###   ########.fr       */
+/*   Updated: 2023/02/09 03:57:47 by absaid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,12 +31,10 @@ int chartoint(char *str)
 t_list *chartolist(char **args)
 {
 	t_list *head;
-	t_list *tmp;
 	int i;
 	
 	head = NULL;
 	i = -1;
-	tmp = head;
 	while(args[++i])
 		ft_lstadd_back(&head, ft_lstnew(chartoint(args[i]), 0));
 	return(head);
