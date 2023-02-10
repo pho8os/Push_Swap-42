@@ -6,7 +6,7 @@
 /*   By: absaid <absaid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 18:00:23 by absaid            #+#    #+#             */
-/*   Updated: 2023/02/10 19:50:45 by absaid           ###   ########.fr       */
+/*   Updated: 2023/02/10 20:42:49 by absaid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,23 +25,25 @@ static void get_lis(t_list *stack, t_list *start)
 		tmp = tmp->next;	
 	}
 	node = start;
-	while(size--)
+	while(size-- >= 0)
 	{
-		if(node != start)
+		tmp = start;
+		while(tmp != node)
 		{
-			tmp = start;
-			while(tmp != node)
+			// 3 2 1 4 5 6
+			// printf("tmp = %d lis = %d | node = %d lis = %d \n", tmp->num, tmp->lis, node->num, node->lis);
+			if(tmp->num < node->num && tmp->lis >= node->lis)
 			{
-				if(tmp < node)
-					node->lis++;
-				tmp = tmp->next;
-				if(!tmp)
-					tmp = stack;
+				node->address = tmp;
+				node->lis++;
 			}
+			tmp = tmp->next;
+			if(!tmp)
+				tmp = stack;
 		}
 		node = node->next;
 		if(!node)
-			node = start;
+			node = stack;
 	}
 }
 void add_lis(t_list *stack)
@@ -57,20 +59,21 @@ void add_lis(t_list *stack)
 		tmp = tmp->next;
 	get_lis(stack, tmp);
 }
-int main()
+int main(int ac, char **av)
 {
-	t_list *head;
-	head = ft_lstnew(2,0);
-	head->next = ft_lstnew(1,0);
-	head->next->next = ft_lstnew(3,0);
-	head->next->next->next = ft_lstnew(4,0);
-	head->next->next->next->next = ft_lstnew(5,0);
-	head->next->next->next->next->next = ft_lstnew(6,0);
-	head->next->next->next->next->next->next = NULL;
+	(void)ac;
+	t_list *head = parser(av + 1);
+	t_list *tmp;
 	add_lis(head);
 	while(head)
 	{
-		printf("lis : %d\n",head->lis);
+		
+		printf("num = %d | lis : %d\n",head->num, head->lis);
+		if(head->address)
+		{
+			tmp = head->address;
+			printf("%d\n",tmp->num);
+		}
 		head = head->next;
 	}
 	
