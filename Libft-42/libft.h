@@ -6,7 +6,7 @@
 /*   By: absaid <absaid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 13:46:23 by absaid            #+#    #+#             */
-/*   Updated: 2023/02/06 20:18:23 by absaid           ###   ########.fr       */
+/*   Updated: 2023/02/10 15:56:01 by absaid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,9 @@
 typedef struct s_list
 {
 	void			*address;
+	int				keep;
 	int				num;
+	int				lis;
 	struct s_list	*next;
 }	t_list;
 int		ft_isalnum(int c);
@@ -68,7 +70,6 @@ t_list	*ft_lstlast(t_list *lst);
 void	ft_lstdelone(t_list *lst, void (*del)(void *));
 void	ft_lstclear(t_list **lst, void (*del)(void *));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
-t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 void	*gc(size_t size, int param);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: absaid <absaid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 03:22:58 by absaid            #+#    #+#             */
-/*   Updated: 2023/02/09 02:22:13 by absaid           ###   ########.fr       */
+/*   Updated: 2023/02/10 19:44:18 by absaid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 void check()
 {
-	system("leaks a.out");
+	system("leaks push_swap");
 }
 void printstack(t_list *stack, char *name)
 {
@@ -50,6 +50,6 @@ int main(int ac, char **av)
 		if(!ft_sort(stack_a))
 			printf("false");
 	}
-	gc(0, 0);
+	gc(0, 5);
 }
 	

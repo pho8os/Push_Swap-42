@@ -6,7 +6,7 @@
 /*   By: absaid <absaid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 18:01:33 by absaid            #+#    #+#             */
-/*   Updated: 2023/02/09 05:06:39 by absaid           ###   ########.fr       */
+/*   Updated: 2023/02/09 18:37:03 by absaid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	*gc(size_t size, int param)
 	void			*address;
 	t_list			*node;
 
-	if (param)
+	if (param == 1)
 	{
 		address = malloc(size);
 		if (!address)
@@ -32,6 +32,6 @@ void	*gc(size_t size, int param)
 		return (address);
 	}
 	if(!param)
-		return (ft_lstclear(&head, free), exit(0), NULL);
-
+		return (ft_lstclear(&head, free), exit(1), NULL);
+	return(ft_lstclear(&head, free), exit(0), NULL);
 }

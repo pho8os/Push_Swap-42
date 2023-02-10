@@ -6,7 +6,7 @@
 /*   By: absaid <absaid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 03:23:16 by absaid            #+#    #+#             */
-/*   Updated: 2023/02/08 04:55:59 by absaid           ###   ########.fr       */
+/*   Updated: 2023/02/10 19:43:27 by absaid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #define PUSH_SWAP_H
 
 # include"Libft-42/libft.h"
-#include <stdbool.h>
+# include <stdbool.h>
 
 t_list *parser(char **args);
 bool ft_sort(t_list *stack);
@@ -35,6 +35,7 @@ void swap(t_list **stack);
 void sa(t_list **stack);
 void sb(t_list **stack);
 void ss(t_list **stack_a, t_list **stack_b);
-void getpose(t_list *list,int *min, int *max);
+int getpmin(t_list *stack);
+void add_lis(t_list *stack);
 
 #endif
