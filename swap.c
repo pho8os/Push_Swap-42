@@ -6,7 +6,7 @@
 /*   By: absaid <absaid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 21:43:34 by absaid            #+#    #+#             */
-/*   Updated: 2023/02/09 02:27:52 by absaid           ###   ########.fr       */
+/*   Updated: 2023/02/11 03:21:18 by absaid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@ void swap(t_list **stack)
 {
 	int tmp;
 	
-	if(!*stack || !(*stack)->next || !stack)
-		gc(0, 0);
+	if(!*stack || !(*stack)->next)
+		return ;
 	tmp = (*stack)->num;
 	(*stack)->num = (*stack)->next->num;
 	(*stack)->next->num = tmp;

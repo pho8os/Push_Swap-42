@@ -2,19 +2,19 @@ NAME = push_swap
 
 CC = cc
 
-CFLAGS = -Wall -Wextra -Werror -Ofast
+CFLAGS = -Wall -Wextra -Werror -Ofast -fsanitize=address 
 
 SRCS = ft_sort.c lis.c main.c parser.c push.c \
-		rotate.c rrotate.c sort_3.c sort_5.c swap.c lis.c \
+		rotate.c rrotate.c sort_3.c sort_5.c swap.c \
 
 OBJS = $(SRCS:.c=.o)
 
-all:$(NAME)
+all: $(NAME)
 
 Libft-42/libft.a:
 	make bonus -C Libft-42
 
-%.o:%.c push_swap.h Libft-42/libft.h 
+%.o:%.c push_swap.h 
 	$(CC) $(CFLAGS) -c $<
 
 $(NAME):$(OBJS) Libft-42/libft.a

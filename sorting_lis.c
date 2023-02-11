@@ -1,44 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rotate.c                                           :+:      :+:    :+:   */
+/*   sorting_lis.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: absaid <absaid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/07 21:05:53 by absaid            #+#    #+#             */
-/*   Updated: 2023/02/11 03:20:58 by absaid           ###   ########.fr       */
+/*   Created: 2023/02/11 05:31:52 by absaid            #+#    #+#             */
+/*   Updated: 2023/02/11 06:15:34 by absaid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void rotate(t_list **stack)
+void get_place(t_list *stack_a, t_list *stack_b)
 {
-	t_list *tmp;
+	int moves;
+	
+	while(stack_b)
+	{
+		get_pmin_place(stack_a, stack_b);
+		stack_b = stack_b->next;
+	}
 
-	if(!*stack || !(*stack)->next)
-		return ;
-	tmp = *stack;
-	*stack = (*stack)->next;
-	tmp->next = NULL;
-	ft_lstadd_back(stack, tmp);
+	
 }
 
-void ra(t_list **stack)
+void sorting(t_list **stack_a , t_list **stack_b)
 {
-	rotate(stack);
-	ft_putendl_fd("ra",1);
-}
-
-void rb(t_list **stack)
-{
-	rotate(stack);
-	ft_putendl_fd("rb",1);
-}
-
-void rr(t_list **stack_a, t_list **stack_b)
-{
-	rotate(stack_a);
-	rotate(stack_b);
-	ft_putendl_fd("rr",1);
+	
 }

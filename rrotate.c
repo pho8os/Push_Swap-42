@@ -6,7 +6,7 @@
 /*   By: absaid <absaid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 21:19:41 by absaid            #+#    #+#             */
-/*   Updated: 2023/02/08 04:29:27 by absaid           ###   ########.fr       */
+/*   Updated: 2023/02/11 03:21:10 by absaid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void rrotate(t_list **stack)
 	t_list *tmp;
 	t_list *tmp2;
 	
-	if(!*stack || !stack || !(*stack)->next)
+	if(!*stack || !(*stack)->next)
 		return ;
 	tmp = ft_lstlast(*stack);
 	tmp2 = *stack;
