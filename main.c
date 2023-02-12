@@ -6,7 +6,7 @@
 /*   By: absaid <absaid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 03:22:58 by absaid            #+#    #+#             */
-/*   Updated: 2023/02/11 04:08:40 by absaid           ###   ########.fr       */
+/*   Updated: 2023/02/12 04:05:41 by absaid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,9 @@ int main(int ac, char **av)
 	{
 		t_list *stack_b = NULL;
 		t_list *stack_a;
+		bool check;
+		check = false;
+		
 		stack_a = parser(av + 1);
 		printstack(stack_a, "stack A");
 		if(!ft_sort(stack_a))
@@ -46,7 +49,7 @@ int main(int ac, char **av)
 			else if(ft_lstsize(stack_a) <= 5)
 				sort_5(&stack_a, &stack_b);
 			else if(ft_lstsize(stack_a) > 5)
-				push_b_lis(&stack_a, &stack_b);
+				push_lis(&stack_a, &stack_b);
 		}
 		printstack(stack_a, "stack A");
 		printstack(stack_b, "stack B");

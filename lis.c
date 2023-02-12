@@ -6,7 +6,7 @@
 /*   By: absaid <absaid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 18:00:23 by absaid            #+#    #+#             */
-/*   Updated: 2023/02/11 04:07:52 by absaid           ###   ########.fr       */
+/*   Updated: 2023/02/12 23:03:21 by absaid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,12 +77,13 @@ void getting_lis(t_list *stack, int *numlis)
 		maxlis = maxlis->address;
 	}
 }
-void	push_b_lis(t_list **stack_a, t_list **stack_b)
+void	push_lis(t_list **stack_a, t_list **stack_b)
 {
 	int size;
 	int lstsize;
 	size = 0;
 	
+
 	getting_lis(*stack_a, &size);
 	lstsize = ft_lstsize(*stack_a) - size;
 	while(lstsize)
@@ -95,4 +96,7 @@ void	push_b_lis(t_list **stack_a, t_list **stack_b)
 		else
 			ra(stack_a);
 	}
+	int i = 100 ;
+	while(i--)
+		sorting(stack_a, stack_b);
 }

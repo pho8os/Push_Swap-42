@@ -6,7 +6,7 @@
 /*   By: absaid <absaid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 03:23:16 by absaid            #+#    #+#             */
-/*   Updated: 2023/02/11 03:12:31 by absaid           ###   ########.fr       */
+/*   Updated: 2023/02/12 22:52:23 by absaid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,8 @@ void sa(t_list **stack);
 void sb(t_list **stack);
 void ss(t_list **stack_a, t_list **stack_b);
 int getpmin(t_list *stack);
-void	push_b_lis(t_list **stack_a, t_list **stack_b);
+void push_lis(t_list **stack_a, t_list **stack_b);
 void printstack(t_list *stack, char *name); //TODO : 7aydha
+void sorting(t_list **stack_a, t_list **stack_b);
 
 #endif
