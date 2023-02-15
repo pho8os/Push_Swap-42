@@ -1,36 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   checker.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: absaid <absaid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/18 07:27:00 by absaid            #+#    #+#             */
-/*   Updated: 2022/10/23 12:04:44 by absaid           ###   ########.fr       */
+/*   Created: 2023/02/15 15:05:46 by absaid            #+#    #+#             */
+/*   Updated: 2023/02/15 16:08:37 by absaid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"libft.h"
+#ifndef CHECKER_H
+# define CHECKER_H
 
-char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
+#include "push_swap.h"
+
+typedef struct s_func
 {
-	size_t	i;
-	size_t	j;
+	char *func;
+	struct s_func *next;
+} t_func;
 
-	if (!*needle)
-		return ((char *)haystack);
-	i = -1;
-	if (!len)
-		return (NULL);
-	while (++i < len && haystack[i])
-	{
-		j = 0;
-		while (haystack[i + j] == needle[j] && i + j < len)
-		{
-			if (!needle[j + 1])
-				return ((char *)(haystack + i));
-			j++;
-		}
-	}
-	return (NULL);
-}
+t_list *parser(char **args);
+
+#endif

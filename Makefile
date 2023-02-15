@@ -1,32 +1,47 @@
 NAME = push_swap
-
+NAME_B = checker
 CC = cc
 
- CFLAGS = -Wall -Wextra -Werror -Ofast -fsanitize=address -g
+ CFLAGS = -Wall -Wextra -Werror -fsanitize=address
 
 SRCS = ft_sort.c lis.c main.c parser.c push.c \
 		rotate.c rrotate.c sort_3.c sort_5.c swap.c sorting_lis.c \
 
+BSRCS = main_bonus.c parser_.c push.c swap.c rotate.c rrotate.c ft_sort.c
+
 OBJS = $(SRCS:.c=.o)
 
+BOBJS = $(BSRCS:.c=.o)
+
+BON =
+
 all: $(NAME)
+
+bonus : $(NAME_B)
 
 Libft-42/libft.a:
 	make bonus -C Libft-42
 
-%.o:%.c push_swap.h 
+%.o:%.c push_swap.h
 	$(CC) $(CFLAGS) -c $<
 
-$(NAME):$(OBJS) Libft-42/libft.a
+$(BON)%.o:%.c push_swap.h
+	$(CC) $(CFLAGS) -c $<
+
+$(NAME):$(OBJS) Libft-42/libft.a push_swap.h Libft-42/libft.h $(BON)
 	$(CC) $(CFLAGS) $(OBJS) Libft-42/libft.a -o $(NAME)
 
+$(NAME_B): $(BOBJS) Libft-42/libft.a checker.h
+	$(CC) $(CFLAGS) $(BOBJS) Libft-42/libft.a -o $(NAME_B)
+
 clean:
-	rm -f $(OBJS) $(BONUSOBJS)
+	rm -f $(OBJS) $(BOBJS)
 	make clean -C Libft-42
 
 fclean: clean 
 	rm -f $(NAME)
 	make fclean -C Libft-42
+	rm -rf $(NAME_B)
 
 re: fclean all 
 
