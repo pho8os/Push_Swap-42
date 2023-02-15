@@ -2,7 +2,7 @@ NAME = push_swap
 
 CC = cc
 
-CFLAGS = -Wall -Wextra -Werror -Ofast -fsanitize=address 
+ CFLAGS = -Wall -Wextra -Werror -Ofast -fsanitize=address -g
 
 SRCS = ft_sort.c lis.c main.c parser.c push.c \
 		rotate.c rrotate.c sort_3.c sort_5.c swap.c sorting_lis.c \
