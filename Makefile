@@ -1,11 +1,26 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: absaid <absaid@student.42.fr>              +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2023/02/15 20:58:04 by absaid            #+#    #+#              #
+#    Updated: 2023/02/15 21:09:27 by absaid           ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 NAME = push_swap
+
 NAME_B = checker
+
 CC = cc
 
- CFLAGS = -Wall -Wextra -Werror 
+CFLAGS = -Wall -Wextra -Werror 
 
 SRCS = ft_sort.c lis.c main.c parser.c push.c \
 		rotate.c rrotate.c sort_3.c sort_5.c swap.c sorting_lis.c \
+		push_b_utils.c
 
 BSRCS = main_bonus.c parser.c push.c swap.c rotate.c rrotate.c ft_sort.c
 

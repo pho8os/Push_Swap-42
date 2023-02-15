@@ -6,7 +6,7 @@
 /*   By: absaid <absaid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/11 05:31:52 by absaid            #+#    #+#             */
-/*   Updated: 2023/02/15 19:46:43 by absaid           ###   ########.fr       */
+/*   Updated: 2023/02/15 21:13:52 by absaid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,46 +47,20 @@ t_list *getmin(t_list *sa)
 	return(min);
 }
 
-t_list *nodecor(t_list *stack, t_list *node)
-{
-	t_list *top;
-	t_list *tmp;
-
-	tmp = stack;
-	top = getmin(stack);
-	while(tmp)
-	{
-		if(tmp->num > node->num)
-		{
-			top = tmp;
-			break;
-		}
-		tmp = tmp->next;
-	}
-	while(stack)
-	{
-		if(stack->num > node->num && stack->num < top->num)
-			top = stack;
-		stack = stack->next;
-	}
-	return top;
-}
 void getmoves(t_list *stack_a, t_list *stack_b)
 {	
 	t_list *tmp;
-	int sa;
-	int sb;
-	
-	sb = ft_lstsize(stack_b);
-	sa = ft_lstsize(stack_a);
+	int pob;
+	int poa;
+
 	getindex(stack_a);
 	getindex(stack_b);
 	tmp = stack_b;
 	while(tmp)
 	{
 		tmp->address = nodecor(stack_a, tmp);
-		int poa = tmp->address->keep;
-		int pob = tmp->keep;
+		poa = tmp->address->keep;
+		pob = tmp->keep;
 
 		if(poa < 0 && pob < 0)
 			tmp->lis = ((poa < pob) * poa + (pob * !(poa < pob))) * -1;
@@ -104,76 +78,13 @@ void push_b(t_list **stack_a, t_list **stack_b, t_list *node)
 {
 
 	if(node->address->keep >= 0 && node->keep >= 0)
-	{
-		while(node->keep && node->address->keep)
-		{
-			rr(stack_a, stack_b, 1);
-			node->address->keep--;
-			node->keep--;
-		}
-		while(node->keep)
-		{	
-			rb(stack_b, 1);
-			node->keep--;
-		}
-		while(node->address->keep)
-		{	
-			ra(stack_a, 1);
-			node->address->keep--;
-		}
-		pa(stack_b, stack_a, 1);
-	}
+		push_1(stack_a, stack_b, node);
 	else if(node->address->keep < 0 && node->keep < 0)
-	{
-
-		while(node->keep && node->address->keep)
-		{
-			rrr(stack_a, stack_b, 1);
-		 	node->address->keep++;
-			node->keep++;
-		}
-		while(node->keep)
-		{	
-			rrb(stack_b, 1);
-			node->keep++;
-		}
-		while(node->address->keep)
-		{
-			rra(stack_a, 1);
-		 	node->address->keep++;	
-		}
-		pa(stack_b, stack_a, 1);
-	}
+		push_2(stack_a, stack_b, node);
 	else if (node->address->keep >= 0 && node->keep < 0)
-	{
-
-		while(node->address->keep)
-		{	
-			ra(stack_a, 1);
-			node->address->keep--;
-		}
-		while(node->keep)
-		{	
-			rrb(stack_b, 1);
-			node->keep++;
-		}
-		pa(stack_b, stack_a, 1);
-	}
+		push_3(stack_a, stack_b, node);
 	else if (node->address->keep < 0 && node->keep >= 0)
-	{
-		while(node->address->keep)
-		{	
-			rra(stack_a, 1);
-			node->address->keep++;
-		}
-		while(node->keep)
-		{	
-			rb(stack_b, 1);
-			node->keep--;
-		}
-		pa(stack_b, stack_a, 1);
-	}
-
+		push_4(stack_a, stack_b, node);
 }
 
 void sorting(t_list **stack_a, t_list **stack_b)
