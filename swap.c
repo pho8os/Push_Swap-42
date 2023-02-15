@@ -6,7 +6,7 @@
 /*   By: absaid <absaid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 21:43:34 by absaid            #+#    #+#             */
-/*   Updated: 2023/02/11 03:21:18 by absaid           ###   ########.fr       */
+/*   Updated: 2023/02/15 17:30:16 by absaid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,21 +23,24 @@ void swap(t_list **stack)
 	(*stack)->next->num = tmp;
 }
 
-void sa(t_list **stack)
+void sa(t_list **stack, int flag)
 {
 	swap(stack);
-	ft_putendl_fd("sa",1);
+	if(flag)
+		ft_putendl_fd("sa",1);
 }
 
-void sb(t_list **stack)
+void sb(t_list **stack, int flag)
 {
 	swap(stack);
-	ft_putendl_fd("sb",1);
+	if(flag)
+		ft_putendl_fd("sb",1);
 }
 
-void ss(t_list **stack_a, t_list **stack_b)
+void ss(t_list **stack_a, t_list **stack_b, int flag)
 {
 	swap(stack_a);
 	swap(stack_b);
-	ft_putendl_fd("ss",1);
+	if(flag)
+		ft_putendl_fd("ss",1);
 }

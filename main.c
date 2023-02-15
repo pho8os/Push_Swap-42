@@ -6,7 +6,7 @@
 /*   By: absaid <absaid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 03:22:58 by absaid            #+#    #+#             */
-/*   Updated: 2023/02/15 14:13:19 by absaid           ###   ########.fr       */
+/*   Updated: 2023/02/15 17:41:08 by absaid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,14 @@ int main(int ac, char **av)
 			else if(ft_lstsize(stack_a) > 5)
 				push_lis(&stack_a, &stack_b);
 		}
+		// printstack(stack_a, "stack A");
+		// printstack(stack_b, "stack b");
 	}
 	gc(0, 5);
 }
-	
+// 	ra
+// pb
+// pb
+// rra
+// pa
+// pa

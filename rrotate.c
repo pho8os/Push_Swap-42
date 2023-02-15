@@ -6,7 +6,7 @@
 /*   By: absaid <absaid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 21:19:41 by absaid            #+#    #+#             */
-/*   Updated: 2023/02/11 03:21:10 by absaid           ###   ########.fr       */
+/*   Updated: 2023/02/15 17:33:49 by absaid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,21 +27,24 @@ void rrotate(t_list **stack)
 	ft_lstadd_front(stack, tmp);
 }
 
-void rra(t_list **stack)
+void rra(t_list **stack, int flag)
 {
 	rrotate(stack);
-	ft_putendl_fd("rra",1);
+	if(flag)
+		ft_putendl_fd("rra",1);
 }
 
-void rrb(t_list **stack)
+void rrb(t_list **stack, int flag)
 {
 	rrotate(stack);
-	ft_putendl_fd("rrb",1);
+	if(flag)
+		ft_putendl_fd("rrb",1);
 }
 
-void rrr(t_list **stack_a, t_list **stack_b)
+void rrr(t_list **stack_a, t_list **stack_b, int flag)
 {
 	rrotate(stack_a);
 	rrotate(stack_b);
-	ft_putendl_fd("rrr",1);
+	if(flag)
+		ft_putendl_fd("rrr",1);
 }

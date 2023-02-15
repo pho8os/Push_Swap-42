@@ -6,7 +6,7 @@
 /*   By: absaid <absaid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 03:23:16 by absaid            #+#    #+#             */
-/*   Updated: 2023/02/13 03:25:49 by absaid           ###   ########.fr       */
+/*   Updated: 2023/02/15 17:30:53 by absaid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,20 +21,20 @@ bool ft_sort(t_list *stack);
 void sort_3(t_list **s);
 void sort_5(t_list **sa, t_list **sb);
 void push(t_list **src , t_list **dst);
-void pa(t_list **src , t_list **dst);
-void pb(t_list **src , t_list **dst);
+void pa(t_list **src , t_list **dst, int flag);
+void pb(t_list **src , t_list **dst, int flag);
 void rrotate(t_list **stack);
-void rra(t_list **stack);
-void rrb(t_list **stack);
-void rrr(t_list **stack_a, t_list **stack_b);
+void rra(t_list **stack, int flag);
+void rrb(t_list **stack, int flag);
+void rrr(t_list **stack_a, t_list **stack_b, int flag);
 void rotate(t_list **stack);
-void ra(t_list **stack);
-void rb(t_list **stack);
-void rr(t_list **stack_a, t_list **stack_b);
+void ra(t_list **stack, int flag);
+void rb(t_list **stack, int flag);
+void rr(t_list **stack_a, t_list **stack_b, int flag);
 void swap(t_list **stack);
-void sa(t_list **stack);
-void sb(t_list **stack);
-void ss(t_list **stack_a, t_list **stack_b);
+void sa(t_list **stack, int flag);
+void sb(t_list **stack, int flag);
+void ss(t_list **stack_a, t_list **stack_b, int flag);
 int getpmin(t_list *stack);
 void push_lis(t_list **stack_a, t_list **stack_b);
 void printstack(t_list *stack, char *name); //TODO : 7aydha

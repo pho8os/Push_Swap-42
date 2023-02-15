@@ -6,7 +6,7 @@
 /*   By: absaid <absaid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/11 05:31:52 by absaid            #+#    #+#             */
-/*   Updated: 2023/02/15 14:17:42 by absaid           ###   ########.fr       */
+/*   Updated: 2023/02/15 17:36:03 by absaid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,71 +94,71 @@ void push_b(t_list **stack_a, t_list **stack_b, t_list *node)
 	{
 		while(node->keep && node->address->keep)
 		{
-			rr(stack_a, stack_b);
+			rr(stack_a, stack_b, 1);
 			node->address->keep--;
 			node->keep--;
 		}
 		while(node->keep)
 		{	
-			rb(stack_b);
+			rb(stack_b, 1);
 			node->keep--;
 		}
 		while(node->address->keep)
 		{	
-			ra(stack_a);
+			ra(stack_a, 1);
 			node->address->keep--;
 		}
-		pa(stack_b, stack_a);
+		pa(stack_b, stack_a, 1);
 	}
 	else if(node->address->keep < 0 && node->keep < 0)
 	{
 
 		while(node->keep && node->address->keep)
 		{
-			rrr(stack_a, stack_b);
+			rrr(stack_a, stack_b, 1);
 		 	node->address->keep++;
 			node->keep++;
 		}
 		while(node->keep)
 		{	
-			rrb(stack_b);
+			rrb(stack_b, 1);
 			node->keep++;
 		}
 		while(node->address->keep)
 		{
-			rra(stack_a);
+			rra(stack_a, 1);
 		 	node->address->keep++;	
 		}
-		pa(stack_b, stack_a);
+		pa(stack_b, stack_a, 1);
 	}
 	else if (node->address->keep >= 0 && node->keep < 0)
 	{
 
 		while(node->address->keep)
 		{	
-			ra(stack_a);
+			ra(stack_a, 1);
 			node->address->keep--;
 		}
 		while(node->keep)
 		{	
-			rrb(stack_b);
+			rrb(stack_b, 1);
 			node->keep++;
 		}
-		pa(stack_b, stack_a);
+		pa(stack_b, stack_a, 1);
 	}
 	else if (node->address->keep < 0 && node->keep >= 0)
 	{
 		while(node->address->keep)
 		{	
-			rra(stack_a);
+			rra(stack_a, 1);
 			node->address->keep++;
 		}
 		while(node->keep)
 		{	
-			rb(stack_b);
+			rb(stack_b, 1);
 			node->keep--;
 		}
-		pa(stack_b, stack_a);
+		pa(stack_b, stack_a, 1);
 	}
 
 }

@@ -6,7 +6,7 @@
 /*   By: absaid <absaid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 18:00:23 by absaid            #+#    #+#             */
-/*   Updated: 2023/02/15 14:14:16 by absaid           ###   ########.fr       */
+/*   Updated: 2023/02/15 17:34:23 by absaid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,18 +83,18 @@ void	push_lis(t_list **stack_a, t_list **stack_b)
 	{
 		if(!((*stack_a)->keep == 1))
 		{
-			pb(stack_a, stack_b);
+			pb(stack_a, stack_b, 1);
 			lstsize--;
 		}
 		else
-			ra(stack_a);
+			ra(stack_a, 1);
 	}
 	while((ft_lstsize(*stack_b)))
 		sorting(stack_a, stack_b);
 	if(getpmin(*stack_a) <= ft_lstsize(*stack_a) / 2)
 		while(getpmin(*stack_a))
-			ra(stack_a);
+			ra(stack_a, 1);
 	if(getpmin(*stack_a) > ft_lstsize(*stack_a) / 2)
 		while(getpmin(*stack_a))
-			rra(stack_a);
+			rra(stack_a, 1);
 }

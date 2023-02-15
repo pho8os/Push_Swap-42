@@ -6,7 +6,7 @@
 /*   By: absaid <absaid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 04:45:50 by absaid            #+#    #+#             */
-/*   Updated: 2023/02/08 23:02:38 by absaid           ###   ########.fr       */
+/*   Updated: 2023/02/15 17:35:06 by absaid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,14 +42,14 @@ void sort_5(t_list **sa, t_list **sb)
 		if(ft_sort(*sa) && !*sb)
 			return ;
 		if(pmin > 2 && pmin)
-			rra(sa);
+			rra(sa, 1);
 		else if(pmin <= 2 && pmin)
-			ra(sa);
+			ra(sa, 1);
 		else if(!pmin)
-			pb(sa, sb);
+			pb(sa, sb, 1);
 		pmin = getpmin(*sa);
 	}
 	sort_3(sa);
 	while(*sb)
-		pa(sb, sa);
+		pa(sb, sa, 1);
 }
