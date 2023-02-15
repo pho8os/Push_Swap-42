@@ -14,7 +14,7 @@ OBJS = $(SRCS:.c=.o)
 BOBJS = $(BSRCS:.c=.o)
 
 BON =
-
+	
 all: $(NAME)
 
 bonus : $(NAME_B)

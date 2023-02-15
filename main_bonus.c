@@ -6,7 +6,7 @@
 /*   By: absaid <absaid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 15:23:46 by absaid            #+#    #+#             */
-/*   Updated: 2023/02/15 17:52:50 by absaid           ###   ########.fr       */
+/*   Updated: 2023/02/15 18:02:33 by absaid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,11 +40,11 @@ void execfunc(char *func, t_list **stack_a, t_list **stack_b)
 			pa(stack_b, stack_a, 0);
 		else if(!ft_strncmp(func, "pb"))
 			pb(stack_a, stack_b, 0);
-		// else 
-		// {
-		// 	write(1, "Error\n", 6);
-		// 	gc(0, 0);
-		// }
+		else 
+		{
+			write(1, "Error\n", 6);
+			gc(0, 0);
+		}
 }
 
 void readfunc(t_list **stack_a, t_list **stack_b)
@@ -72,7 +72,7 @@ int main(int ac, char **av)
 	{
 		stack_a = parser(av + 1);
 		readfunc(&stack_a, &stack_b);
-		if(ft_sort(stack_a))
+		if(ft_sort(stack_a) && !stack_b)
 			write(1, "OK\n", 3);
 		else
 			write(1, "KO\n", 3);
