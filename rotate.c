@@ -6,7 +6,7 @@
 /*   By: absaid <absaid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 21:05:53 by absaid            #+#    #+#             */
-/*   Updated: 2023/02/15 20:12:34 by absaid           ###   ########.fr       */
+/*   Updated: 2023/02/15 22:55:50 by absaid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,14 +28,14 @@ void	ra(t_list **stack, int flag)
 {
 	rotate(stack);
 	if (flag)
-		ft_putendl_fd("ra",1);
+		ft_putendl_fd("ra", 1);
 }
 
 void	rb(t_list **stack, int flag)
 {
 	rotate(stack);
 	if (flag)
-		ft_putendl_fd("rb",1);
+		ft_putendl_fd("rb", 1);
 }
 
 void	rr(t_list **stack_a, t_list **stack_b, int flag)
@@ -43,5 +43,5 @@ void	rr(t_list **stack_a, t_list **stack_b, int flag)
 	rotate(stack_a);
 	rotate(stack_b);
 	if (flag)
-		ft_putendl_fd("rr",1);
+		ft_putendl_fd("rr", 1);
 }

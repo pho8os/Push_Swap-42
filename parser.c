@@ -6,7 +6,7 @@
 /*   By: absaid <absaid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 03:26:06 by absaid            #+#    #+#             */
-/*   Updated: 2023/02/15 20:08:45 by absaid           ###   ########.fr       */
+/*   Updated: 2023/02/15 23:02:21 by absaid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,14 +31,14 @@ int	chartoint(char *str)
 
 t_list	*chartolist(char **args)
 {
-	t_list *head;
-	int i;
-	
+	t_list	*head;
+	int		i;
+
 	head = NULL;
 	i = -1;
-	while(args[++i])
+	while (args[++i])
 		ft_lstadd_back(&head, ft_lstnew(chartoint(args[i]), 0));
-	return(head);
+	return (head);
 }
 
 void	checkspace(char **args)
@@ -55,7 +55,7 @@ void	checkspace(char **args)
 		if (args[i][j] == 0)
 		{
 			write(2, "Error\n", 6);
-			gc(0,0);
+			gc(0, 0);
 		}
 	}
 }
@@ -65,12 +65,12 @@ t_list	*parser(char **args)
 	char	*str;
 	int		i;
 	t_list	*list;
-	
+
 	str = NULL;
 	checkspace(args);
 	i = -1;
-	while (args[++i])	
-		str = ft_strjoin(str,args[i]);
-	list = chartolist(ft_split(str,' '));
+	while (args[++i])
+		str = ft_strjoin(str, args[i]);
+	list = chartolist(ft_split(str, ' '));
 	return (list);
 }

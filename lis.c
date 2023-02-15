@@ -6,13 +6,13 @@
 /*   By: absaid <absaid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 18:00:23 by absaid            #+#    #+#             */
-/*   Updated: 2023/02/15 19:46:10 by absaid           ###   ########.fr       */
+/*   Updated: 2023/02/15 23:06:00 by absaid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"push_swap.h"
 
-void	justnorme(t_list *tmp ,t_list *node, t_list **maxlis, t_list *stack)
+void	justnorme(t_list *tmp, t_list *node, t_list **maxlis, t_list *stack)
 {
 	while (tmp != node)
 	{
@@ -20,7 +20,6 @@ void	justnorme(t_list *tmp ,t_list *node, t_list **maxlis, t_list *stack)
 		{
 			node->address = tmp;
 			node->lis++;
-					
 		}
 		if (node->lis > tmp->lis)
 			*maxlis = node;
@@ -37,7 +36,7 @@ void	get_lis(t_list *stack, t_list *start, t_list **maxlis)
 	t_list	*tmp;
 	t_list	*node;
 	int		size;
-	
+
 	size = ft_lstsize(stack);
 	tmp = stack;
 	node = start;
@@ -63,11 +62,11 @@ void	getting_lis(t_list *stack, int *numlis)
 	{
 		tmp->keep = 0;
 		tmp->lis = 0;
-		tmp = tmp->next;	
+		tmp = tmp->next;
 	}
 	tmp = stack;
 	while (++size < getpmin(stack))
-		tmp = tmp->next;	
+		tmp = tmp->next;
 	get_lis(stack, tmp, &maxlis);
 	while (maxlis)
 	{
@@ -79,8 +78,8 @@ void	getting_lis(t_list *stack, int *numlis)
 
 void	push_lis(t_list **stack_a, t_list **stack_b)
 {
-	int size;
-	int lstsize;
+	int	size;
+	int	lstsize;
 
 	size = 0;
 	getting_lis(*stack_a, &size);

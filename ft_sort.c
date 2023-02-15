@@ -6,7 +6,7 @@
 /*   By: absaid <absaid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 22:51:41 by absaid            #+#    #+#             */
-/*   Updated: 2023/02/15 20:02:47 by absaid           ###   ########.fr       */
+/*   Updated: 2023/02/15 23:06:12 by absaid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,5 @@ bool	ft_sort(t_list *stack)
 				return (false);
 		}
 	}
-	return (true);	
+	return (true);
 }

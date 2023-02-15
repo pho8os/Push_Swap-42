@@ -6,23 +6,24 @@
 /*   By: absaid <absaid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/08 04:45:50 by absaid            #+#    #+#             */
-/*   Updated: 2023/02/15 17:35:06 by absaid           ###   ########.fr       */
+/*   Updated: 2023/02/15 22:53:20 by absaid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-int getpmin(t_list *stack)
+
+int	getpmin(t_list *stack)
 {
-	int min;
-	int pos;
-	int l;
-	
+	int	min;
+	int	pos;
+	int	l;
+
 	l = 0;
 	pos = 0;
 	min = stack->num;
-	while(stack)
+	while (stack)
 	{
-		if(stack->num < min)
+		if (stack->num < min)
 		{
 			pos = l;
 			min = stack->num;
@@ -30,26 +31,27 @@ int getpmin(t_list *stack)
 		l++;
 		stack = stack->next;
 	}
-	return(pos);
+	return (pos);
 }
-void sort_5(t_list **sa, t_list **sb)
+
+void	sort_5(t_list **sa, t_list **sb)
 {
-	int pmin;
+	int	pmin;
 
 	pmin = getpmin(*sa);
-	while(ft_lstsize(*sa) > 3)
+	while (ft_lstsize(*sa) > 3)
 	{
-		if(ft_sort(*sa) && !*sb)
+		if (ft_sort(*sa) && !*sb)
 			return ;
-		if(pmin > 2 && pmin)
+		if (pmin > 2 && pmin)
 			rra(sa, 1);
-		else if(pmin <= 2 && pmin)
+		else if (pmin <= 2 && pmin)
 			ra(sa, 1);
-		else if(!pmin)
+		else if (!pmin)
 			pb(sa, sb, 1);
 		pmin = getpmin(*sa);
 	}
 	sort_3(sa);
-	while(*sb)
+	while (*sb)
 		pa(sb, sa, 1);
 }

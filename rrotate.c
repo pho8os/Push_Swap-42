@@ -6,7 +6,7 @@
 /*   By: absaid <absaid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 21:19:41 by absaid            #+#    #+#             */
-/*   Updated: 2023/02/15 20:13:04 by absaid           ###   ########.fr       */
+/*   Updated: 2023/02/15 22:55:02 by absaid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	rrotate(t_list **stack)
 {
 	t_list	*tmp;
 	t_list	*tmp2;
-	
+
 	if (!*stack || !(*stack)->next)
 		return ;
 	tmp = ft_lstlast(*stack);
@@ -31,14 +31,14 @@ void	rra(t_list **stack, int flag)
 {
 	rrotate(stack);
 	if (flag)
-		ft_putendl_fd("rra",1);
+		ft_putendl_fd("rra", 1);
 }
 
 void	rrb(t_list **stack, int flag)
 {
 	rrotate(stack);
 	if (flag)
-		ft_putendl_fd("rrb",1);
+		ft_putendl_fd("rrb", 1);
 }
 
 void	rrr(t_list **stack_a, t_list **stack_b, int flag)
@@ -46,5 +46,5 @@ void	rrr(t_list **stack_a, t_list **stack_b, int flag)
 	rrotate(stack_a);
 	rrotate(stack_b);
 	if (flag)
-		ft_putendl_fd("rrr",1);
+		ft_putendl_fd("rrr", 1);
 }
