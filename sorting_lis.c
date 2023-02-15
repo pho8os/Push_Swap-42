@@ -6,7 +6,7 @@
 /*   By: absaid <absaid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/11 05:31:52 by absaid            #+#    #+#             */
-/*   Updated: 2023/02/15 17:36:03 by absaid           ###   ########.fr       */
+/*   Updated: 2023/02/15 19:46:43 by absaid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,13 +33,27 @@ void getindex(t_list *stack)
 	}
 }
 
+t_list *getmin(t_list *sa)
+{
+	t_list *min;
+
+	min = sa;
+	while(sa)
+	{
+		if(sa->num < min->num)
+			min = sa;
+		sa = sa->next;
+	}
+	return(min);
+}
+
 t_list *nodecor(t_list *stack, t_list *node)
 {
 	t_list *top;
 	t_list *tmp;
 
 	tmp = stack;
-	top = stack;
+	top = getmin(stack);
 	while(tmp)
 	{
 		if(tmp->num > node->num)
@@ -67,7 +81,6 @@ void getmoves(t_list *stack_a, t_list *stack_b)
 	sa = ft_lstsize(stack_a);
 	getindex(stack_a);
 	getindex(stack_b);
-	
 	tmp = stack_b;
 	while(tmp)
 	{

@@ -6,7 +6,7 @@
 /*   By: absaid <absaid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/04 03:26:06 by absaid            #+#    #+#             */
-/*   Updated: 2023/02/15 18:00:22 by absaid           ###   ########.fr       */
+/*   Updated: 2023/02/15 19:40:33 by absaid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,6 @@ t_list *parser(char **args)
 	int 	i;
 	t_list *list;
 	
-	list = NULL;
 	str = NULL;
 	checkspace(args);
 	i = -1;

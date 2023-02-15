@@ -6,82 +6,88 @@
 /*   By: absaid <absaid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 18:00:23 by absaid            #+#    #+#             */
-/*   Updated: 2023/02/15 17:34:23 by absaid           ###   ########.fr       */
+/*   Updated: 2023/02/15 19:46:10 by absaid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"push_swap.h"
 
-void clearkeep(t_list *stack)
+void	justnorme(t_list *tmp ,t_list *node, t_list **maxlis, t_list *stack)
 {
-	while (stack)
+	while (tmp != node)
 	{
-		stack->keep = 0;
-		stack->lis = 0;
-		stack = stack->next;	
+		if (tmp->num < node->num && tmp->lis >= node->lis)
+		{
+			node->address = tmp;
+			node->lis++;
+					
+		}
+		if (node->lis > tmp->lis)
+			*maxlis = node;
+		else
+			*maxlis = tmp;
+		tmp = tmp->next;
+		if (!tmp)
+			tmp = stack;
 	}
 }
 
-int getkeepval(t_list *stack, t_list *node)
+void	get_lis(t_list *stack, t_list *start, t_list **maxlis)
 {
-	int lis;
-	int max;
-	int size;
+	t_list	*tmp;
+	t_list	*node;
+	int		size;
 	
 	size = ft_lstsize(stack);
-	clearkeep(stack);
-	lis = 0;
-	max = node->num;
-	while(size--)
+	tmp = stack;
+	node = start;
+	while (size-- >= 0)
 	{
-		if(node->num > max)
-		{
-			max = node->num;
-			node->keep = 1;
-			lis++;
-		}
-		if(node->next)
-			node = node->next;
-		else
+		tmp = start;
+		justnorme(tmp, node, maxlis, stack);
+		node = node->next;
+		if (!node)
 			node = stack;
 	}
-	return (lis);
 }
-int get_lis_(t_list *stack)
+
+void	getting_lis(t_list *stack, int *numlis)
 {
-	t_list *tmp;
-	t_list *headkeep;
-	int lis;
-	int top;
-	
-	headkeep = stack;
-	top = 0;
+	int		size;
+	t_list	*tmp;
+	t_list	*maxlis;
+
+	size = -1;
 	tmp = stack;
-	while(tmp)
+	while (tmp)
 	{
-	 	lis = getkeepval(stack, tmp);
-		if (lis > top || ((lis == top) && headkeep->num < tmp->num))
-		{
-			headkeep = tmp;
-			top = lis;
-		}
-		tmp = tmp->next;
+		tmp->keep = 0;
+		tmp->lis = 0;
+		tmp = tmp->next;	
 	}
-	getkeepval(stack, headkeep);
-	return(top);
+	tmp = stack;
+	while (++size < getpmin(stack))
+		tmp = tmp->next;	
+	get_lis(stack, tmp, &maxlis);
+	while (maxlis)
+	{
+		(*numlis)++;
+		maxlis->keep = 1;
+		maxlis = maxlis->address;
+	}
 }
 
 void	push_lis(t_list **stack_a, t_list **stack_b)
 {
 	int size;
 	int lstsize;
+
 	size = 0;
-	
-	size = get_lis_(*stack_a);
+	getting_lis(*stack_a, &size);
 	lstsize = ft_lstsize(*stack_a) - size;
-	while(lstsize)
+	while (lstsize)
 	{
-		if(!((*stack_a)->keep == 1))
+		if (!((*stack_a)->keep == 1))
 		{
 			pb(stack_a, stack_b, 1);
 			lstsize--;
@@ -89,12 +95,12 @@ void	push_lis(t_list **stack_a, t_list **stack_b)
 		else
 			ra(stack_a, 1);
 	}
-	while((ft_lstsize(*stack_b)))
+	while (ft_lstsize(*stack_b))
 		sorting(stack_a, stack_b);
-	if(getpmin(*stack_a) <= ft_lstsize(*stack_a) / 2)
-		while(getpmin(*stack_a))
+	if (getpmin(*stack_a) <= ft_lstsize(*stack_a) / 2)
+		while (getpmin(*stack_a))
 			ra(stack_a, 1);
-	if(getpmin(*stack_a) > ft_lstsize(*stack_a) / 2)
-		while(getpmin(*stack_a))
+	if (getpmin(*stack_a) > ft_lstsize(*stack_a) / 2)
+		while (getpmin(*stack_a))
 			rra(stack_a, 1);
 }

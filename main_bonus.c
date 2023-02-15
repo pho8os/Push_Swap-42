@@ -6,11 +6,11 @@
 /*   By: absaid <absaid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 15:23:46 by absaid            #+#    #+#             */
-/*   Updated: 2023/02/15 18:02:33 by absaid           ###   ########.fr       */
+/*   Updated: 2023/02/15 19:38:42 by absaid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"checker.h"
+#include"push_swap.h"
 
 // void execfunc2(char *func, t_list **stack_a, t_list **stack_b)
 // {

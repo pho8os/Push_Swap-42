@@ -2,12 +2,12 @@ NAME = push_swap
 NAME_B = checker
 CC = cc
 
- CFLAGS = -Wall -Wextra -Werror -fsanitize=address
+ CFLAGS = -Wall -Wextra -Werror 
 
 SRCS = ft_sort.c lis.c main.c parser.c push.c \
 		rotate.c rrotate.c sort_3.c sort_5.c swap.c sorting_lis.c \
 
-BSRCS = main_bonus.c parser_.c push.c swap.c rotate.c rrotate.c ft_sort.c
+BSRCS = main_bonus.c parser.c push.c swap.c rotate.c rrotate.c ft_sort.c
 
 OBJS = $(SRCS:.c=.o)
 
@@ -31,7 +31,7 @@ $(BON)%.o:%.c push_swap.h
 $(NAME):$(OBJS) Libft-42/libft.a push_swap.h Libft-42/libft.h $(BON)
 	$(CC) $(CFLAGS) $(OBJS) Libft-42/libft.a -o $(NAME)
 
-$(NAME_B): $(BOBJS) Libft-42/libft.a checker.h
+$(NAME_B): $(BOBJS) Libft-42/libft.a push_swap.h
 	$(CC) $(CFLAGS) $(BOBJS) Libft-42/libft.a -o $(NAME_B)
 
 clean:
