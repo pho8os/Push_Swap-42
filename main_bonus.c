@@ -6,31 +6,31 @@
 /*   By: absaid <absaid@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 15:23:46 by absaid            #+#    #+#             */
-/*   Updated: 2023/02/15 23:03:45 by absaid           ###   ########.fr       */
+/*   Updated: 2023/02/17 03:10:11 by absaid           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"push_swap.h"
 
-void	execfunc2(char *func, t_list **stack_a, t_list **stack_b)
+int	execfunc2(char *func, t_list **stack_a, t_list **stack_b)
 {
 	if (!ft_strncmp(func, "sa"))
-		sa(stack_a, 0);
+		return (sa(stack_a, 0), 1);
 	else if (!ft_strncmp(func, "rra"))
-		rra(stack_a, 0);
+		return (rra(stack_a, 0), 1);
 	else if (!ft_strncmp(func, "sb"))
-		sb(stack_b, 0);
+		return (sb(stack_b, 0), 1);
 	else if (!ft_strncmp(func, "ss"))
-		ss(stack_a, stack_b, 0);
+		return (ss(stack_a, stack_b, 0), 1);
 	else if (!ft_strncmp(func, "ra"))
-		ra(stack_a, 0);
+		return (ra(stack_a, 0), 1);
 	else if (!ft_strncmp(func, "rb"))
-		rb(stack_b, 0);
+		return (rb(stack_b, 0), 1);
+	return (0);
 }
 
 void	execfunc(char *func, t_list **stack_a, t_list **stack_b)
 {
-	execfunc2(func, stack_a, stack_b);
 	if (!ft_strncmp(func, "rr"))
 		rr(stack_a, stack_b, 0);
 	else if (!ft_strncmp(func, "rrb"))
@@ -41,7 +41,7 @@ void	execfunc(char *func, t_list **stack_a, t_list **stack_b)
 		pa(stack_b, stack_a, 0);
 	else if (!ft_strncmp(func, "pb"))
 		pb(stack_a, stack_b, 0);
-	else
+	else if (!execfunc2(func, stack_a, stack_b))
 	{
 		write(2, "Error\n", 6);
 		gc(0, 0);

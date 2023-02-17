@@ -6,7 +6,7 @@
 #    By: absaid <absaid@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/18 07:27:30 by absaid            #+#    #+#              #
-#    Updated: 2023/02/15 15:58:38 by absaid           ###   ########.fr        #
+#    Updated: 2023/02/16 01:05:43 by absaid           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ NAME = libft.a
 
 CC = cc
 
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -fsanitize=address
 
 SRCS = ft_atoi.c ft_bzero.c ft_calloc.c ft_isdigit.c \
  ft_memset.c ft_putendl_fd.c ft_putstr_fd.c ft_split.c \

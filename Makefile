@@ -6,7 +6,7 @@
 #    By: absaid <absaid@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/15 20:58:04 by absaid            #+#    #+#              #
-#    Updated: 2023/02/15 21:09:27 by absaid           ###   ########.fr        #
+#    Updated: 2023/02/16 01:04:19 by absaid           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ NAME_B = checker
 
 CC = cc
 
-CFLAGS = -Wall -Wextra -Werror 
+CFLAGS = -Wall -Wextra -Werror -fsanitize=address 
 
 SRCS = ft_sort.c lis.c main.c parser.c push.c \
 		rotate.c rrotate.c sort_3.c sort_5.c swap.c sorting_lis.c \
