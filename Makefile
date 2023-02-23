@@ -28,8 +28,7 @@ OBJS = $(SRCS:.c=.o)
 
 BOBJS = $(BSRCS:.c=.o)
 
-BON =
-	
+
 all: $(NAME)
 
 bonus : $(NAME_B)
@@ -40,8 +39,7 @@ Libft-42/libft.a:
 %.o:%.c push_swap.h
 	$(CC) $(CFLAGS) -c $<
 
-$(BON)%.o:%.c push_swap.h
-	$(CC) $(CFLAGS) -c $<
+
 
 $(NAME):$(OBJS) Libft-42/libft.a push_swap.h Libft-42/libft.h $(BON)
 	$(CC) $(CFLAGS) $(OBJS) Libft-42/libft.a -o $(NAME)
